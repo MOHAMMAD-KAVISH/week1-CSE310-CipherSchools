@@ -1,0 +1,84 @@
+#include <iostream>
+#include <string>
+#include <vector>
+
+using namespace std;
+
+// Abstract class representing a shape
+class Shape {
+public:
+    // Pure virtual function to calculate area
+    virtual double calculateArea() const = 0;
+};
+
+// Concrete class representing a Rectangle, inheriting from Shape
+class Rectangle : public Shape {
+private:
+    double width;
+    double height;
+    
+public:
+    // Constructor
+    Rectangle(double w, double h) : width(w), height(h) {}
+    
+    // Override to implement calculateArea for Rectangle
+    double calculateArea() const override {
+        return width * height;
+    }
+};
+
+// Concrete class representing a Circle, inheriting from Shape
+class Circle : public Shape {
+private:
+    double radius;
+    
+public:
+    // Constructor
+    Circle(double r) : radius(r) {}
+    
+    // Override to implement calculateArea for Circle
+    double calculateArea() const override {
+        return 3.14159 * radius * radius;
+    }
+};
+
+// Class representing a Drawing, using composition
+class Drawing {
+private:
+    vector<Shape*> shapes; // Vector of pointers to Shape objects
+    
+public:
+    // Add a shape to the drawing
+    void addShape(Shape* shape) {
+        shapes.push_back(shape);
+    }
+    
+    // Calculate total area of all shapes in the drawing
+    double totalArea() const {
+        double total = 0.0;
+        for (const auto& shape : shapes) {
+            total += shape->calculateArea();
+        }
+        return total;
+    }
+};
+
+int main() {
+    // Create objects
+    Rectangle rectangle(5, 4);
+    Circle circle(3);
+    
+    // Calculate area of individual shapes
+    cout << "Area of Rectangle: " << rectangle.calculateArea() << endl;
+    cout << "Area of Circle: " << circle.calculateArea() << endl;
+    
+    // Create a drawing and add shapes
+    Drawing drawing;
+    drawing.addShape(&rectangle);
+    drawing.addShape(&circle);
+    
+    // Calculate total area of the drawing
+    cout << "Total Area of Drawing: " << drawing.totalArea() << endl;
+    
+    return 0;
+}
