@@ -1,0 +1,34 @@
+public class Main {
+    public static void main(String[] args) {
+        // Primitive data types
+        byte byteVar = 127;
+        short shortVar = 32000;
+        int intVar = 1234567890;
+        long longVar = 123456789012345L; // Note the 'L' suffix for long literals
+        float floatVar = 3.14f; // Note the 'f' suffix for float literals
+        double doubleVar = 3.14159265359;
+        boolean booleanVar = true;
+        char charVar = 'A';
+
+        // Type casting
+        // Implicit casting (Widening Conversion)
+        intVar = byteVar; // byte can be implicitly cast to int
+        longVar = intVar; // int can be implicitly cast to long
+        doubleVar = floatVar; // float can be implicitly cast to double
+
+        // Explicit casting (Narrowing Conversion)
+        intVar = (int) longVar; // long must be explicitly cast to int
+        shortVar = (short) intVar; // int must be explicitly cast to short
+        floatVar = (float) doubleVar; // double must be explicitly cast to float
+
+        // Displaying values
+        System.out.println("byteVar: " + byteVar);
+        System.out.println("shortVar: " + shortVar);
+        System.out.println("intVar: " + intVar);
+        System.out.println("longVar: " + longVar);
+        System.out.println("floatVar: " + floatVar);
+        System.out.println("doubleVar: " + doubleVar);
+        System.out.println("booleanVar: " + booleanVar);
+        System.out.println("charVar: " + charVar);
+    }
+}
