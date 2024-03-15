@@ -1,0 +1,65 @@
+public class OperatorsExample {
+    public static void main(String[] args) {
+        // Arithmetic operators
+        int a = 10;
+        int b = 5;
+        int sum = a + b;  // Addition
+        int difference = a - b;  // Subtraction
+        int product = a * b;  // Multiplication
+        int quotient = a / b;  // Division
+        int remainder = a % b;  // Modulus
+        System.out.println("Arithmetic operators:");
+        System.out.println("Sum: " + sum);
+        System.out.println("Difference: " + difference);
+        System.out.println("Product: " + product);
+        System.out.println("Quotient: " + quotient);
+        System.out.println("Remainder: " + remainder);
+
+        // Relational operators
+        boolean isEqual = (a == b);  // Equal to
+        boolean isNotEqual = (a != b);  // Not equal to
+        boolean isGreaterThan = (a > b);  // Greater than
+        boolean isLessThan = (a < b);  // Less than
+        boolean isGreaterThanOrEqual = (a >= b);  // Greater than or equal to
+        boolean isLessThanOrEqual = (a <= b);  // Less than or equal to
+        System.out.println("\nRelational operators:");
+        System.out.println("Is equal: " + isEqual);
+        System.out.println("Is not equal: " + isNotEqual);
+        System.out.println("Is greater than: " + isGreaterThan);
+        System.out.println("Is less than: " + isLessThan);
+        System.out.println("Is greater than or equal to: " + isGreaterThanOrEqual);
+        System.out.println("Is less than or equal to: " + isLessThanOrEqual);
+
+        // Logical operators
+        boolean x = true;
+        boolean y = false;
+        boolean andResult = x && y;  // Logical AND
+        boolean orResult = x || y;  // Logical OR
+        boolean notResult = !x;  // Logical NOT
+        System.out.println("\nLogical operators:");
+        System.out.println("Logical AND: " + andResult);
+        System.out.println("Logical OR: " + orResult);
+        System.out.println("Logical NOT: " + notResult);
+
+        // Increment and decrement operators
+        int num = 5;
+        num++;  // Increment
+        System.out.println("\nIncrement operator:");
+        System.out.println("After increment: " + num);
+        num--;  // Decrement
+        System.out.println("After decrement: " + num);
+
+        // Assignment operators
+        int value = 10;
+        value += 5;  // Equivalent to value = value + 5;
+        System.out.println("\nAssignment operators:");
+        System.out.println("Value after addition: " + value);
+
+        // Conditional operator (Ternary operator)
+        int number1 = 10;
+        int number2 = 20;
+        int max = (number1 > number2) ? number1 : number2;
+        System.out.println("\nConditional operator:");
+        System.out.println("Maximum value: " + max);
+    }
+}
