@@ -1,0 +1,95 @@
+// Simple Java program demonstrating various features of Java
+
+// Platform Independent
+// Java code can run on any platform with Java Virtual Machine (JVM) installed
+// No need to recompile the code for different platforms
+
+// Simple
+// Java syntax is easy to learn and understand
+// Provides features like automatic memory management (Garbage Collection)
+
+// Secure
+// Java provides a robust security model to protect systems from harmful code
+// Bytecode verifier ensures that the code loaded by JVM is safe to execute
+
+// Architecture-neutral
+// Java bytecodes are platform-independent and can run on any architecture with JVM support
+
+// Portable
+// Java programs can be easily transported from one computer system to another
+
+// Robust
+// Java provides strong memory management, exception handling, and type checking mechanisms
+// Reduces errors and makes debugging easier
+
+// Multithreaded
+// Java supports multithreading, allowing concurrent execution of multiple threads
+// Helps in building responsive and interactive applications
+
+// Interpreted
+// Java code is first compiled into bytecode and then interpreted by the JVM
+// Provides flexibility and portability
+
+// High Performance
+// Java's Just-In-Time (JIT) compiler optimizes bytecode for better performance at runtime
+
+public class Main {
+    public static void main(String[] args) {
+        // Platform Independent
+        System.out.println("Java is Platform Independent");
+
+        // Simple
+        int a = 5;
+        int b = 3;
+        int sum = a + b;
+        System.out.println("Sum: " + sum);
+
+        // Secure
+        System.out.println("Java provides a secure environment");
+
+        // Architecture-neutral
+        System.out.println("Java is Architecture-neutral");
+
+        // Portable
+        System.out.println("Java is Portable");
+
+        // Robust
+        int[] arr = {1, 2, 3};
+        System.out.println("Element at index 3: " + arr[3]); // ArrayIndexOutOfBoundsException
+
+        // Multithreaded
+        Thread t1 = new Thread(() -> {
+            for (int i = 0; i < 5; i++) {
+                System.out.println("Thread 1: " + i);
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
+        Thread t2 = new Thread(() -> {
+            for (int i = 0; i < 5; i++) {
+                System.out.println("Thread 2: " + i);
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
+        t1.start();
+        t2.start();
+
+        // Interpreted
+        System.out.println("Java code is interpreted by JVM");
+
+        // High Performance
+        int num1 = 10;
+        int num2 = 20;
+        int result = num1 * num2;
+        System.out.println("Multiplication result: " + result);
+    }
+}
