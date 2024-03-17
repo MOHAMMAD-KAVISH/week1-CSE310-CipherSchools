@@ -1,0 +1,35 @@
+public class CharToIntAndInstantiation {
+    public static void main(String[] args) {
+        // Char to int conversion
+        char charValue = 'A';
+        int intValue = (int) charValue; // Explicit casting from char to int
+        System.out.println("Char to Int:");
+        System.out.println("Character: " + charValue);
+        System.out.println("Integer: " + intValue);
+
+        // Instantiation of objects
+        // Example class for instantiation
+        class MyClass {
+            int number;
+
+            // Constructor
+            public MyClass(int n) {
+                number = n;
+            }
+
+            public void display() {
+                System.out.println("Number: " + number);
+            }
+        }
+
+        // Instantiating an object of MyClass
+        MyClass obj1 = new MyClass(10);
+        obj1.display();
+
+        // Instantiating multiple objects of MyClass
+        MyClass obj2 = new MyClass(20);
+        MyClass obj3 = new MyClass(30);
+        obj2.display();
+        obj3.display();
+    }
+}
