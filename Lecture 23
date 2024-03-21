@@ -1,0 +1,30 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+public class OptimizedScannerExample {
+    public static void main(String[] args) throws IOException {
+        // Create a BufferedReader object to read input from the console
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+        // Read input using a single line
+        System.out.print("Enter an integer, a floating-point number, and a string separated by spaces: ");
+        StringTokenizer st = new StringTokenizer(br.readLine());
+
+        // Parse integer input
+        int num = Integer.parseInt(st.nextToken());
+        System.out.println("Integer entered: " + num);
+
+        // Parse floating-point input
+        double decimal = Double.parseDouble(st.nextToken());
+        System.out.println("Floating-point number entered: " + decimal);
+
+        // Read string input directly from the tokenizer
+        String str = st.nextToken();
+        System.out.println("String entered: " + str);
+
+        // Close the BufferedReader object
+        br.close();
+    }
+}
