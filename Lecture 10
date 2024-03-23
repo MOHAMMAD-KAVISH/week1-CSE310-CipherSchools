@@ -1,0 +1,64 @@
+Static Variables:
+Static variables are shared among all instances of a class.
+They are initialized only once, at the start of the execution, and are common to all instances of the class.
+They are declared using the static keyword.
+Static Methods:
+Static methods belong to the class rather than to any specific instance.
+They can be called directly using the class name, without the need to create an instance of the class.
+They cannot access instance variables or instance methods directly, as they are not associated with any instance.
+Static Blocks:
+Static blocks are used to initialize static variables.
+They are executed only once, when the class is loaded into memory.
+They are declared using the static keyword and enclosed within curly braces {}.
+Example of Static Variables, Methods, and Blocks:
+java
+Copy code
+public class MyClass {
+    // Static variable
+    static int staticVar = 10;
+
+    // Instance variable
+    int instanceVar;
+
+    // Static block
+    static {
+        System.out.println("Static block executed");
+        // Initialize static variables
+        staticVar = 20;
+    }
+
+    // Static method
+    static void staticMethod() {
+        System.out.println("Static method called");
+        // Cannot access instanceVar directly as it is not associated with any instance
+        // System.out.println("Instance variable: " + instanceVar); // Compilation Error
+    }
+
+    public static void main(String[] args) {
+        // Accessing static variable and method directly using class name
+        System.out.println("Static variable: " + MyClass.staticVar);
+        MyClass.staticMethod();
+
+        // Creating objects of MyClass
+        MyClass obj1 = new MyClass();
+        MyClass obj2 = new MyClass();
+
+        // Accessing instance variable
+        obj1.instanceVar = 5;
+        obj2.instanceVar = 10;
+
+        // Accessing instance variable using objects
+        System.out.println("Instance variable of obj1: " + obj1.instanceVar);
+        System.out.println("Instance variable of obj2: " + obj2.instanceVar);
+    }
+}
+In this example:
+
+staticVar is a static variable shared among all instances of the class.
+The static block initializes the static variables when the class is loaded into memory.
+staticMethod() is a static method called directly using the class name.
+Instance variables instanceVar are specific to each instance of the class and can be accessed using objects of the class.
+
+
+
+
