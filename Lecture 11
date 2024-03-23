@@ -1,0 +1,31 @@
+// Final class
+final class FinalClass {
+    final int finalVariable = 10; // Final variable
+
+    // Final method
+    final void finalMethod() {
+        System.out.println("Final method in FinalClass");
+    }
+}
+
+// Attempting to inherit from a final class will result in a compilation error
+// class Derived extends FinalClass { } // Compilation Error: Cannot inherit from final FinalClass
+
+// Concrete subclass
+class SubClass extends FinalClass {
+    // Attempting to override the final method will result in a compilation error
+    // void finalMethod() { } // Compilation Error: Cannot override the final method from FinalClass
+}
+
+public class FinalKeywordExample {
+    public static void main(String[] args) {
+        // Creating object of FinalClass
+        FinalClass finalObject = new FinalClass();
+
+        // Accessing final variable
+        System.out.println("Final Variable: " + finalObject.finalVariable);
+
+        // Calling final method
+        finalObject.finalMethod();
+    }
+}
