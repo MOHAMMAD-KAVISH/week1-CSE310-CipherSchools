@@ -1,0 +1,69 @@
+// Abstract class representing a shape
+abstract class Shape {
+    // Abstract method to calculate area
+    public abstract double calculateArea();
+
+    // Abstract method to calculate perimeter
+    public abstract double calculatePerimeter();
+}
+
+// Concrete subclass representing a rectangle
+class Rectangle extends Shape {
+    private double length;
+    private double width;
+
+    // Constructor
+    public Rectangle(double length, double width) {
+        this.length = length;
+        this.width = width;
+    }
+
+    // Implementation of abstract method to calculate area
+    @Override
+    public double calculateArea() {
+        return length * width;
+    }
+
+    // Implementation of abstract method to calculate perimeter
+    @Override
+    public double calculatePerimeter() {
+        return 2 * (length + width);
+    }
+}
+
+// Concrete subclass representing a circle
+class Circle extends Shape {
+    private double radius;
+
+    // Constructor
+    public Circle(double radius) {
+        this.radius = radius;
+    }
+
+    // Implementation of abstract method to calculate area
+    @Override
+    public double calculateArea() {
+        return Math.PI * radius * radius;
+    }
+
+    // Implementation of abstract method to calculate perimeter
+    @Override
+    public double calculatePerimeter() {
+        return 2 * Math.PI * radius;
+    }
+}
+
+public class AbstractionExample {
+    public static void main(String[] args) {
+        // Creating objects of Rectangle and Circle
+        Rectangle rectangle = new Rectangle(5, 3);
+        Circle circle = new Circle(4);
+
+        // Calling abstract methods without knowing the implementation details
+        System.out.println("Area of Rectangle: " + rectangle.calculateArea());
+        System.out.println("Perimeter of Rectangle: " + rectangle.calculatePerimeter());
+
+        System.out.println("Area of Circle: " + circle.calculateArea());
+        System.out.println("Circumference of Circle: " + circle.calculatePerimeter());
+    }
+}
