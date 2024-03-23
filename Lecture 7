@@ -1,0 +1,45 @@
+Stack:
+The stack is a region of memory used for method calls and local variables.
+Each thread in a Java program has its own stack.
+When a method is called, a new stack frame is created, which contains parameters, local variables, and return address.
+The stack operates in a Last-In-First-Out (LIFO) manner.
+Heap:
+The heap is a region of memory used for dynamic memory allocation.
+Objects in Java are allocated memory on the heap.
+All objects reside in the heap, regardless of how they are created (e.g., using the new keyword or as part of an array).
+Memory in the heap is managed by the Java Virtual Machine (JVM) using garbage collection algorithms.
+The heap operates in a more complex manner than the stack, with memory allocation and deallocation occurring at different times.
+Example:
+Here's an example demonstrating the difference between stack and heap in Java:
+
+java
+Copy code
+public class StackHeapExample {
+    public static void main(String[] args) {
+        // Stack variables
+        int stackVar1 = 10;
+        int stackVar2 = 20;
+
+        // Heap objects
+        String str1 = new String("Hello"); // String object allocated on the heap
+        String str2 = "World"; // String literal also resides in the heap
+
+        // Printing stack variables
+        System.out.println("Stack Variable 1: " + stackVar1);
+        System.out.println("Stack Variable 2: " + stackVar2);
+
+        // Printing heap objects
+        System.out.println("Heap Object 1: " + str1);
+        System.out.println("Heap Object 2: " + str2);
+    }
+}
+In this example:
+
+stackVar1 and stackVar2 are variables allocated on the stack.
+str1 and str2 are objects allocated on the heap. While str2 is a string literal and directly resides in the string pool, str1 is created using the new keyword and is explicitly allocated memory on the heap.
+Understanding the distinction between stack and heap memory is crucial for writing efficient and bug-free Java programs.
+
+
+
+
+
