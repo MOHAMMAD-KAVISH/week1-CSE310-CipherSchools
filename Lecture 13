@@ -1,0 +1,66 @@
+Interface in Java:
+An interface in Java is a reference type, similar to a class, that can contain only constants, method signatures, default methods, static methods, and nested types. It is a blueprint of a class and defines a set of methods that a class must implement.
+
+Key Points about Interfaces:
+Interface Declaration: An interface is declared using the interface keyword.
+Abstract Methods: An interface can contain abstract methods (methods without a body), which must be implemented by classes that implement the interface.
+Constants: Interfaces can have constants, which are implicitly public, static, and final.
+Default Methods: Java 8 introduced default methods, which allow interfaces to provide default implementations for methods. These methods can be overridden by implementing classes.
+Static Methods: Java 8 also introduced static methods in interfaces, which are utility methods that can be called directly on the interface.
+Multiple Inheritance: Interfaces support multiple inheritance, meaning a class can implement multiple interfaces.
+No Instance Variables: Interfaces cannot contain instance variables. They can only have constants (static final variables).
+No Constructors: Interfaces cannot have constructors because they cannot be instantiated.
+Example of Interface in Java:
+java
+Copy code
+// Interface declaration
+interface Animal {
+    // Abstract method
+    void eat();
+
+    // Default method
+    default void sleep() {
+        System.out.println("Animal is sleeping");
+    }
+
+    // Static method
+    static void move() {
+        System.out.println("Animal is moving");
+    }
+}
+
+// Class implementing the Animal interface
+class Dog implements Animal {
+    // Implementation of abstract method
+    @Override
+    public void eat() {
+        System.out.println("Dog is eating");
+    }
+
+    // Overriding default method
+    @Override
+    public void sleep() {
+        System.out.println("Dog is sleeping");
+    }
+}
+
+public class InterfaceExample {
+    public static void main(String[] args) {
+        // Creating object of Dog class
+        Dog dog = new Dog();
+
+        // Calling abstract method
+        dog.eat();
+
+        // Calling default method
+        dog.sleep();
+
+        // Calling static method
+        Animal.move();
+    }
+}
+Explanation:
+We declare an Animal interface with an abstract method eat(), a default method sleep(), and a static method move().
+The Dog class implements the Animal interface and provides implementations for the abstract method eat() and overrides the default method sleep().
+In the main method, we create an object of the Dog class and call the eat() and sleep() methods. We also call the static method move() directly on the Animal interface.
+Interfaces play a crucial role in Java programming by providing a way to achieve abstraction, multiple inheritance, and defining contracts for classes. They are widely used in various Java frameworks and APIs.
